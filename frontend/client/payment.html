@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment</title>
+  <link rel="stylesheet" href="../assets/css/client.css" />
+  <script src="../assets/js/client.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BookStore</div>
+
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Search by title, author, or keyword..." />
+    </div>
+
+    <select id="genreFilter" class="genre-select">
+      <option value="all">All genres</option>
+      <option value="detective">Detective</option>
+      <option value="classic">Classic</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science fiction</option>
+    </select>
+  </div>
+
+  <div class="topbar-right">
+    <button class="btn ghost" id="basketBtn">
+      Basket(<span class="basket-count">0</span>)
+    </button>
+    <button class="btn primary" id="loginBtn">Login / Register</button>
+  </div>
+</header>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Book added to cart</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 BookStore</span>
+    <span>Contact: support@bookstore.com</span>
+    <span>Kyiv, UA</span>
+  </div>
+</footer>
+
+  <main class="payment-layout">
+    <section class="payment-box">
+      <h1>Payment Method</h1>
+      <p class="payment-sub">Choose how you want to pay.</p>
+
+      <div class="payment-options">
+        <label><input type="radio" name="payMethod" value="card" checked /> Credit / Debit Card</label>
+        <label><input type="radio" name="payMethod" value="paypal" /> PayPal</label>
+        <label><input type="radio" name="payMethod" value="gpay" /> Google Pay</label>
+      </div>
+
+      <div id="cardForm" class="card-form">
+        <label>Card Number</label>
+        <input type="text" id="cardNumber" />
+
+        <label>Expiry Date (MM/YY)</label>
+        <input type="text" id="cardExpiry" />
+
+        <label>CVV</label>
+        <input type="text" id="cardCVV" />
+
+        <label>Postal Code</label>
+        <input type="text" id="cardPostal" />
+      </div>
+
+      <button class="btn primary" id="completeOrderBtn">Complete Order</button>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>No Results Found</title>
+  <link rel="stylesheet" href="../assets/css/client.css" />
+  <script src="../assets/js/client.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BookStore</div>
+
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Search by title, author, or keyword..." />
+    </div>
+
+    <select id="genreFilter" class="genre-select">
+      <option value="all">All genres</option>
+      <option value="detective">Detective</option>
+      <option value="classic">Classic</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science fiction</option>
+    </select>
+  </div>
+
+  <div class="topbar-right">
+    <button class="btn ghost" id="basketBtn">
+      Basket(<span class="basket-count">0</span>)
+    </button>
+    <button class="btn primary" id="loginBtn">Login / Register</button>
+  </div>
+</header>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Book added to cart</div>
+
+
+
+  <main class="search-error-layout">
+    <h1>No Results Found</h1>
+    <p class="search-error-sub">
+      We couldn't find any books matching your search.
+    </p>
+
+    <button class="btn primary" id="backToCatalogBtn">Back to Catalog</button>
+
+    <section class="recommendations">
+      <h2>You may also like</h2>
+      <div id="recommendGrid" class="books-grid"></div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 BookStore</span>
+    <span>Contact: support@bookstore.com</span>
+    <span>Kyiv, UA</span>
+  </div>
+</footer>
+
+</body>
+</html>

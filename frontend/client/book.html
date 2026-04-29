@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Details</title>
+  <link rel="stylesheet" href="../assets/css/client.css" />
+  <script src="../assets/js/client.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BookStore</div>
+
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Search by title, author, or keyword..." />
+    </div>
+
+    <select id="genreFilter" class="genre-select">
+      <option value="all">All genres</option>
+      <option value="detective">Detective</option>
+      <option value="classic">Classic</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science fiction</option>
+    </select>
+  </div>
+
+  <div class="topbar-right">
+    <button class="btn ghost" id="basketBtn">
+      Basket(<span class="basket-count">0</span>)
+    </button>
+    <button class="btn primary" id="loginBtn">Login / Register</button>
+  </div>
+</header>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Book added to cart</div>
+
+
+
+  <main class="catalog-layout">
+    <h1 id="bookTitle"></h1>
+
+    <div class="book-card">
+      <div class="book-cover"></div>
+
+      <div class="book-author" id="bookAuthor"></div>
+      <div class="book-price" id="bookPrice"></div>
+      <div class="book-stock" id="bookStock"></div>
+
+      <p id="bookDescription"></p>
+
+      <button class="btn primary" id="addToCartBtn">Add to Cart</button>
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 BookStore</span>
+    <span>Contact: support@bookstore.com</span>
+    <span>Kyiv, UA</span>
+  </div>
+</footer>
+
+</body>
+</html>

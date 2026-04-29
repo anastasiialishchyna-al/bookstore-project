@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Successful</title>
+  <link rel="stylesheet" href="../assets/css/client.css" />
+  <script src="../assets/js/client.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BookStore</div>
+
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Search by title, author, or keyword..." />
+    </div>
+
+    <select id="genreFilter" class="genre-select">
+      <option value="all">All genres</option>
+      <option value="detective">Detective</option>
+      <option value="classic">Classic</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science fiction</option>
+    </select>
+  </div>
+
+  <div class="topbar-right">
+    <button class="btn ghost" id="basketBtn">
+      Basket(<span class="basket-count">0</span>)
+    </button>
+    <button class="btn primary" id="loginBtn">Login / Register</button>
+  </div>
+</header>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Book added to cart</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 BookStore</span>
+    <span>Contact: support@bookstore.com</span>
+    <span>Kyiv, UA</span>
+  </div>
+</footer>
+  <main class="order-success-layout">
+    <div class="order-success-box">
+      <h1>Order Successful</h1>
+      <p class="order-success-sub">Thank you for your purchase!</p>
+
+      <button class="btn primary" id="viewOrdersBtn">View My Orders</button>
+      <button class="btn ghost" id="backToCatalogBtn">Back to Catalog</button>
+    </div>
+  </main>
+
+</body>
+</html>

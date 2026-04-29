@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="../assets/css/client.css" />
+  <script src="../assets/js/client.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BookStore</div>
+
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="Search by title, author, or keyword..." />
+    </div>
+
+    <select id="genreFilter" class="genre-select">
+      <option value="all">All genres</option>
+      <option value="detective">Detective</option>
+      <option value="classic">Classic</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science fiction</option>
+    </select>
+  </div>
+
+  <div class="topbar-right">
+    <button class="btn ghost" id="basketBtn">
+      Basket(<span class="basket-count">0</span>)
+    </button>
+    <button class="btn primary" id="loginBtn">Login / Register</button>
+  </div>
+</header>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Book added to cart</div>
+
+
+
+  <main class="auth-layout">
+
+    <section class="auth-box">
+      <h1>Login</h1>
+      <p class="auth-sub">Sign in with your email address.</p>
+
+      <label>Email</label>
+      <input type="email" id="loginEmail" />
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" />
+
+      <div class="auth-options">
+        <label><input type="checkbox" id="showPassLogin" /> Show Password</label>
+        <label><input type="checkbox" id="rememberMe" /> Remember Me</label>
+      </div>
+
+      <button class="btn primary" id="loginSubmit">Sign In</button>
+    </section>
+
+    <section class="auth-box">
+      <h1>Create an Account</h1>
+
+      <label>Name</label>
+      <input type="text" id="regName" />
+
+      <label>Email</label>
+      <input type="email" id="regEmail" />
+
+      <label>Password</label>
+      <input type="password" id="regPassword" />
+
+      <label>Confirm Password</label>
+      <input type="password" id="regPassword2" />
+
+      <button class="btn primary" id="registerSubmit">Create Account</button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 BookStore</span>
+    <span>Contact: support@bookstore.com</span>
+    <span>Kyiv, UA</span>
+  </div>
+</footer>
+
+</body>
+</html>
