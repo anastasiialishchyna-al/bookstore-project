@@ -293,7 +293,7 @@ const Cart = {
   events() {
     if (!location.pathname.includes("cart.html")) return;
 
-    Utils.qs("#cartList").addEventListener("click", e => {
+    Utils.qs("#cartList")?.addEventListener("click", e => {
       const id = Number(e.target.dataset.id);
       const action = e.target.dataset.action;
       if (!id || !action) return;
@@ -521,12 +521,17 @@ const Errors = {
       Utils.qs("#backToCartBtn")?.addEventListener("click", () => Utils.go("./cart.html"));
     }
 
+    if (document.querySelector("#recommendGrid")) {
+        Errors.recommendations();
+    }
+
     if (location.pathname.includes("order-success")) {
       cart = [];
       Storage.saveCart(cart);
       UI.updateCartIcon();
 
       Utils.qs("#viewOrdersBtn")?.addEventListener("click", () => Utils.go("./profile.html"));
+      Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
       Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
     }
   }
