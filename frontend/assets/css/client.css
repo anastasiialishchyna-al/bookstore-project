@@ -394,6 +394,11 @@ a {
   display: block;
 }
 
+#saveProfileBtn {
+  display: inline-block;
+  margin-top: 24px;
+}
+
 .profile-section label {
   display: block;
   margin-top: 16px;
@@ -407,6 +412,7 @@ a {
   border-radius: 4px;
   border: 1px solid var(--color-border);
 }
+
 
 .order-item {
   padding: 16px;
@@ -460,6 +466,7 @@ a {
   margin-bottom: 24px;
 }
 
+
 .card-form label {
   display: block;
   margin-top: 16px;
@@ -473,6 +480,7 @@ a {
   border-radius: 4px;
   border: 1px solid var(--color-border);
 }
+
 
 /* Оплата PayPal */
 .paypal-form {
@@ -502,7 +510,7 @@ a {
   max-width: 300px;
 }
 
-.bth-paypal:hoover {
+.btn-paypal:hover {
   background-color: #f2ba36;
 }
 
@@ -539,7 +547,7 @@ a {
   max-width: 300px;
   display: inline-flex;
   justify-content: center;
-  align-items: canter;
+  align-items: center;
   transition: background 0.3s;
 }
 
@@ -550,6 +558,11 @@ a {
 .gpay-logo {
   font-weight: bold;
   margin-right: 4px;
+}
+
+#completeOrderBtn {
+  display: block;
+  margin: 24px auto 0;
 }
 
 .order-success-box h1 {
