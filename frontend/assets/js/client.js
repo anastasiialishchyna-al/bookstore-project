@@ -31,10 +31,10 @@ let cart = Storage.loadCart();
 
 // Тимчасові книги (backend замінить)
 const books = [
-  { id: 1, title: "The Silent Detective", author: "J. Black", price: 19.99, stock: 5, genre: "detective", description: "A mysterious detective story." },
-  { id: 2, title: "Classic Tales", author: "A. Writer", price: 14.5, stock: 0, genre: "classic", description: "A collection of timeless classics." },
-  { id: 3, title: "Fantasy World", author: "L. Dreamer", price: 22.0, stock: 3, genre: "fantasy", description: "A journey through magical lands." },
-  { id: 4, title: "Future Science", author: "K. Nova", price: 18.75, stock: 7, genre: "sci-fi", description: "Exploring the science of tomorrow." }
+  { id: 1, title: "The Silent Man", author: "J.D. Weston", price: 19.99, stock: 5, genre: "detective", description: "A mysterious detective story.", cover: "../assets/img/Silent_Man_cover-1.png" },
+  { id: 2, title: "Fairy Tales", author: "J. Grimm, W. Grimm", price: 14.50, stock: 0, genre: "classic", description: "A collection of timeless classics.", cover: "../assets/img/Faire_Tales_cover-1.png"},
+  { id: 3, title: "Beauty and the Beast", author: "Suzanne Barbot", price: 22.00, stock: 3, genre: "fantasy", description: "A journey through magical lands.", cover: "../assets/img/Beauty_Beast_cover-1.png"},
+  { id: 4, title: "Lonely Broadcast", author: "Kel Byron", price: 18.75, stock: 7, genre: "sci-fi", description: "Exploring the science of tomorrow.", cover: "../assets/img/Lonely_Broadcast_cover-1.png"}
 ];
 
 let user = Storage.loadUser() || {
@@ -126,7 +126,9 @@ const Catalog = {
       card.className = "book-card";
 
       card.innerHTML = `
-        <div class="book-cover"></div>
+        <div class="book-cover">
+          <img src="${book.cover}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
         <div class="book-title">${book.title}</div>
         <div class="book-author">${book.author}</div>
         <div class="book-price">$${book.price.toFixed(2)}</div>
@@ -473,7 +475,9 @@ const Errors = {
       card.className = "book-card";
 
       card.innerHTML = `
-        <div class="book-cover"></div>
+        <div class="book-cover">
+          <img src="${book.cover}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
         <div class="book-title">${book.title}</div>
         <div class="book-author">${book.author}</div>
         <div class="book-price">$${book.price.toFixed(2)}</div>

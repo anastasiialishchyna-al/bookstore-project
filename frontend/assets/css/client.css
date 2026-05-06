@@ -149,6 +149,7 @@ a {
   border-radius: 6px;
   margin-bottom: 12px;
   background: linear-gradient(135deg, #ddd, #bbb);
+  overflow: hidden;
 }
 
 .book-title {
