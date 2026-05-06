@@ -474,6 +474,84 @@ a {
   border: 1px solid var(--color-border);
 }
 
+/* Оплата PayPal */
+.paypal-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.paypal-button-container {
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* */
+
+.btn-paypal {
+  background-color: #ffc439; /**/
+  border: none;
+  border-radius: 25px; /**/
+  padding: 12px 40px;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.bth-paypal:hoover {
+  background-color: #f2ba36;
+}
+
+.paypal-text {
+  color: #003087; /**/
+  font-weight: bold;
+  font-style: italic;
+}
+
+/**/
+.gpay-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.gpay-button-container {
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/**/ 
+.btn-gpay {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 40px;
+  font-size: 20px;
+  font-family: 'Product Sans', Arial, sans-serif;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: canter;
+  transition: background 0.3s;
+}
+
+.btn-gpay:hover {
+  background-color: #3c4043;
+}
+
+.gpay-logo {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
 .order-success-box h1 {
   color: var(--color-success);
 }

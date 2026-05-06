@@ -428,10 +428,20 @@ const Payment = {
     if (!location.pathname.includes("payment.html")) return;
 
     const cardForm = Utils.qs("#cardForm");
+    const paypalForm = Utils.qs("#paypalForm");
+    const gpayForm = Utils.qs("#gpayForm");
 
     Utils.qsa("input[name='payMethod']").forEach(radio => {
       radio.addEventListener("change", () => {
         cardForm.style.display = radio.value === "card" ? "block" : "none";
+
+        if (paypalForm) {
+          paypalForm.style.display = radio.value === "paypal" ? "block" : "none";
+        }
+
+        if (gpayForm) {
+          gpayForm.style.display = radio.value === "gpay" ? "block" : "none";
+        }
       });
     });
 
