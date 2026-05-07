@@ -484,6 +484,8 @@ const Errors = {
       const card = document.createElement("article");
       card.className = "book-card";
 
+      const isAvailable = book.stock > 0;
+
       card.innerHTML = `
         <div class="book-cover">
           <img src="${book.cover}" alt="${book.title}" style="width: 100%; height: 100%; object-fit: cover;">
@@ -491,8 +493,14 @@ const Errors = {
         <div class="book-title">${book.title}</div>
         <div class="book-author">${book.author}</div>
         <div class="book-price">$${book.price.toFixed(2)}</div>
+
+        <div class="book-status">In stock</div>
+
         <div class="book-actions">
           <button class="btn ghost" data-id="${book.id}" data-role="details">Details</button>
+           <button class="btn primary" data-id="${book.id}" data-role="add" ${!isAvailable ? 'disabled' : ''}>
+           ${isAvailable ? 'Add to Cart' : 'Out of stock'}
+           </button>
         </div>
       `;
 
@@ -501,11 +509,23 @@ const Errors = {
 
     container.addEventListener("click", e => {
       const id = Number(e.target.dataset.id);
-      if (id) Utils.go(`./book.html?id=${id}`);
+      const role = e.target.dataset.role;
+
+      if (!id) return;
+
+      if (role === "details") {
+        Utils.go(`./book.html?id=${id}`);
+      } else if (role === "add") {
+        Cart.add(id);
+        UI.showToast("Book Added to cart!");
+      }
+
+      /*if (id) Utils.go(`./book.html?id=${id}`);*/
     });
   },
 
   init() {
+
     if (location.pathname.includes("empty-cart")) {
       Errors.recommendations();
       Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
@@ -521,17 +541,12 @@ const Errors = {
       Utils.qs("#backToCartBtn")?.addEventListener("click", () => Utils.go("./cart.html"));
     }
 
-    if (document.querySelector("#recommendGrid")) {
-        Errors.recommendations();
-    }
-
     if (location.pathname.includes("order-success")) {
       cart = [];
       Storage.saveCart(cart);
       UI.updateCartIcon();
 
       Utils.qs("#viewOrdersBtn")?.addEventListener("click", () => Utils.go("./profile.html"));
-      Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
       Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
     }
   }
