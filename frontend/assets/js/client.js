@@ -594,6 +594,21 @@ const Errors = {
       Storage.saveCart(cart);
       UI.updateCartIcon();
 
+      /* const viewOrdersBtn = Utils.qs("viewOrdersBtn");
+      const user = localStorage.getItem("user");
+
+      if (!user && viewOrdersBtn) {
+        viewOrdersBtn.textContent = "Back to Catalog";
+        viewOrdersBtn.addEventListener("click", () => Utils.go("./index.html"));
+         
+        const subtext = Utils.qs("#order-success p");
+        if (subtext) {
+          subtext.textContent = "Your order has been placed! We've sent the details to your email.";
+        } 
+      } else {
+        viewOrdersBtn?.addEventListener("click", () => Utils.go("./profile.html"));
+      }*/
+
       Utils.qs("#viewOrdersBtn")?.addEventListener("click", () => Utils.go("./profile.html"));
       Utils.qs("#backToCatalogBtn")?.addEventListener("click", () => Utils.go("./index.html"));
     }
