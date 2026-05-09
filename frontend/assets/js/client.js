@@ -187,6 +187,54 @@ const Catalog = {
 };
 
 
+/**************************************
+ * BANNERS - банери на сторінці каталогу
+ **************************************/
+
+const Slider = {
+  banners: [
+    '../assets/img/FictionWeek(1).png',
+    '../assets/img/OrderBanner.png',
+    '../assets/img/WeekFantasy(1).png',
+    '../assets/img/OrderBanner2.1.png'
+  ],
+  currentIndex: 0,
+
+  init() {
+    const container = document.getElementById('bannerContainer');
+    if (!container) return; 
+
+    this.banners.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      if (index === 0) img.classList.add('active');
+      container.appendChild(img);
+    });
+
+  setInterval(() => this.next(), 5000);
+  
+  document.getElementById('nextBanner')?.addEventListener('click', () => this.next());
+  document.getElementById('prevBanner')?.addEventListener('click', () => this.prev());
+  },
+
+  showBanner(index) {
+    const images = document.querySelectorAll('#bannerContainer img');
+    images.forEach(img => img.classList.remove('active'));
+
+    this.currentIndex = (index + this.banners.length) % this.banners.length;
+    images[this.currentIndex].classList.add('active');
+  },
+
+  next() {
+    this.showBanner(this.currentIndex + 1);
+  },
+
+  prev() {
+    this.showBanner(this.currentIndex - 1);
+  }
+};
+
+
 /********************************************
  * BOOK PAGE — сторінка книги
  ********************************************/
@@ -562,6 +610,7 @@ const App = {
     UI.setupGlobalNav();
 
     Catalog.init();
+    Slider.init();
     BookPage.init();
     Cart.render();
     Cart.events();
